@@ -46,9 +46,9 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        if (!head) return false;
-        ListNode* slow = head;
-        ListNode* fast = head->next;
+        if (!head || !head->next) return false;
+        ListNode* slow = head->next;
+        ListNode* fast = slow->next;
         while (fast && slow) {
             if (fast == slow) return true;
             slow = slow->next;
